@@ -1,0 +1,30 @@
+h1{
+	text-align: center;
+}
+
+
+.keyboard{
+	display: flex;
+	align-items: flex-end;
+}
+
+#gameBox img{
+	display: flex;
+	margin: auto auto;
+	height: 300px;
+	justify-content: center;
+}
+
+.wordBank{
+	display: flex;
+	justify-content: center
+}
+
+.wordBank div{
+	display: flex;
+	border-bottom: 5px solid black;
+	border-bottom-width: medium
+	margin-left: 50px;
+	margin-right: 50px;
+	padding: 0 20px;
+}
