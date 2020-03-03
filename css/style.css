@@ -6,6 +6,10 @@ h1{
 .keyboard{
 	display: flex;
 	align-items: flex-end;
+	padding: 150px;
+	margin-left: 50px;
+	margin-right: 50px;
+	justify-content: center
 }
 
 #gameBox img{
