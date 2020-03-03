@@ -3,7 +3,13 @@ console.log("Linked and working!")
 
 //document.querySelectorAll("button")[0]
 
-const word = ["C", "A", "B"];
+const wordA = "People";
+//const word = ["C", "D", "R", "D", "S"];
+
+const word = wordA.split("");
+
+
+//EDGE CASE: lowerCase
 
 //Gets all the divs
 let wordBankDivs = document.getElementsByClassName("wordBank")[0];
@@ -110,6 +116,10 @@ for(i = 0; i < letters.length; i++) {
     document.getElementsByClassName("keyboard")[0].append(button);
   }
 
+for(let i = 0; i < word.length; i++){
+	let divElement = document.createElement("div");
+	document.getElementsByClassName("wordBank")[0].append(divElement);
+}
 
 
 const btnA = document.querySelector("button");
@@ -133,12 +143,28 @@ for (let i=0; i < buttons.length; i++) {
         // use keyword this to target clicked button
         //alert(buttons[i].value);
         if(word.indexOf(buttons[i].value) !== -1){
-			let myIndex = word.indexOf(buttons[i].value);
-			wordBankDivs.children[myIndex].textContent = word[myIndex];
-			buttons[i].style.color = "green";
-		}else{
+
+        	for(let j = 0; j < word.length; j++){
+        		if(buttons[i].value === word[j]) {
+        			let myIndex = j;
+        			console.log(myIndex);
+        			wordBankDivs.children[myIndex].textContent = word[j];
+        		}
+        	}
+        		
+        	// 	//console.log(myIndex);
+        	// 	//wordBankDivs.children[myIndex].textContent = buttons[i].value;
+        	// }
+        	//do a for loop here
+			// let myIndex = word.indexOf(buttons[i].value);
+			// wordBankDivs.children[myIndex].textContent = word[myIndex];
+			buttons[i].style.background = "green";
+		}else if(hangmanImageSources.length <= 0){
+			alert("YOU LOSE!");
+		}else {
 			hanganImageObj.src = hangmanImageSources[0];
 			hangmanImageSources.shift();
+			buttons[i].style.background = "red";
 		}
 		buttons[i].disabled = true
 
