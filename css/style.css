@@ -3,13 +3,26 @@ h1{
 }
 
 
+
 .keyboard{
 	display: flex;
 	align-items: flex-end;
 	padding: 150px;
 	margin-left: 50px;
 	margin-right: 50px;
-	justify-content: center
+/*	padding-left: 150px;
+	padding=right: 150px;*/
+	justify-content: center;
+	flex-wrap: wrap;
+	/*width: auto;*/
+
+}
+
+.keyboard button{
+	margin-left: 5px;
+	margin-right: 5px;
+
+
 }
 
 #gameBox img{
@@ -21,7 +34,8 @@ h1{
 
 .wordBank{
 	display: flex;
-	justify-content: center
+	justify-content: center;
+	padding-top: 80px;
 }
 
 .wordBank div{
@@ -32,3 +46,4 @@ h1{
 	margin-right: 50px;
 	padding: 0 20px;
 }
+

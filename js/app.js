@@ -3,10 +3,10 @@ console.log("Linked and working!")
 
 //document.querySelectorAll("button")[0]
 
-const wordA = "People";
+const input = "people";
 //const word = ["C", "D", "R", "D", "S"];
 
-const word = wordA.split("");
+const word = input.toUpperCase().split("");
 
 
 //EDGE CASE: lowerCase
@@ -136,6 +136,7 @@ const btnA = document.querySelector("button");
 
 let buttons = document.querySelectorAll(".keyboard button");
 console.log("Buttons: " ,buttons);
+let correctLetterCounter = 0;
 //var i = 0, length = buttons.length;
 for (let i=0; i < buttons.length; i++) {
 
@@ -148,26 +149,36 @@ for (let i=0; i < buttons.length; i++) {
         		if(buttons[i].value === word[j]) {
         			let myIndex = j;
         			console.log(myIndex);
+        			correctLetterCounter++;
         			wordBankDivs.children[myIndex].textContent = word[j];
         		}
         	}
-        		
-        	// 	//console.log(myIndex);
-        	// 	//wordBankDivs.children[myIndex].textContent = buttons[i].value;
-        	// }
-        	//do a for loop here
-			// let myIndex = word.indexOf(buttons[i].value);
-			// wordBankDivs.children[myIndex].textContent = word[myIndex];
+
+        	if(correctLetterCounter === word.length){
+        		alert("WINNER!");
+        	}
+        	buttons[i].style.color = "white";
 			buttons[i].style.background = "green";
 		}else if(hangmanImageSources.length <= 0){
 			alert("YOU LOSE!");
-		}else {
+        }
+		else {
 			hanganImageObj.src = hangmanImageSources[0];
 			hangmanImageSources.shift();
 			buttons[i].style.background = "red";
+			buttons[i].style.color = "white";
 		}
 		buttons[i].disabled = true
 
     });
 
 };
+
+
+fetch('http://example.com/movies.json')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  });
