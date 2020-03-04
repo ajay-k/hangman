@@ -1,8 +1,13 @@
 h1{
 	text-align: center;
+	padding-right: 70px;
 }
 
-
+h2{
+	text-align: right;
+	padding-right: 150px;
+	color: green;
+}
 
 .keyboard{
 	display: flex;
@@ -14,6 +19,8 @@ h1{
 	padding=right: 150px;*/
 	justify-content: center;
 	flex-wrap: wrap;
+	padding-left: 250px;
+	padding-top: 90px;
 	/*width: auto;*/
 
 }
@@ -30,12 +37,14 @@ h1{
 	margin: auto auto;
 	height: 300px;
 	justify-content: center;
+	padding-left: 100px;
 }
 
 .wordBank{
 	display: flex;
 	justify-content: center;
 	padding-top: 80px;
+	padding-left: 170px;
 }
 
 .wordBank div{
