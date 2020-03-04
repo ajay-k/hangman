@@ -11,6 +11,7 @@ let hanganImageObj = document.getElementsByTagName("img")[0];
 let wordBankDivs = document.getElementsByClassName("wordBank")[0];
 
 let remainingTurns = document.getElementById("remainingTurns");
+let turnsLeft = hangmanImageSources.length + 1;
 
 // remainingTurns.textContent = "ABC";
 // remainingTurns.style.color = "red";
@@ -120,8 +121,11 @@ function colorCodeRemainingTurns() {
 		remainingTurns.style.color = "#FF4500";
 	}else if(hangmanImageSources.length === 1){
 		remainingTurns.style.color = "#fe001a";
+	}else{
+		remainingTurns.style.color = "#fe001a";
 	}
-	remainingTurns.textContent = `Remaining Turns: ${hangmanImageSources.length}`;
+
+	remainingTurns.textContent = `Remaining Turns: ${turnsLeft}`;
 }
 function displayletters(word) {
 	let buttons = document.querySelectorAll(".keyboard button");
@@ -151,12 +155,15 @@ function displayletters(word) {
 	        	buttons[i].style.color = "white";
 				buttons[i].style.background = "green";
 			}else if(hangmanImageSources.length <= 0){
+				turnsLeft--;
+				colorCodeRemainingTurns();
 				alert("YOU LOSE!");
 				turnOffButtons();
 	        }
 			else {
 				hanganImageObj.src = hangmanImageSources[0];
 				hangmanImageSources.shift();
+				turnsLeft--;
 				colorCodeRemainingTurns();
 				buttons[i].style.background = "red";
 				buttons[i].style.color = "white";
