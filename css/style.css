@@ -3,7 +3,8 @@ h1{
 	padding-right: 70px;
 }
 
-h2{
+
+#remainingTurns{
 	text-align: right;
 	padding-right: 150px;
 	color: green;
@@ -25,12 +26,17 @@ h2{
 
 }
 
-.keyboard button{
+/*.keyboard button:hover{
 	margin-left: 5px;
 	margin-right: 5px;
-
+	transform: translate(-127, 509);
 
 }
+*/
+/*.keyboard:hover {
+  transform: scale(2);
+  transition: transform 1s;
+}*/
 
 #gameBox img{
 	display: flex;
@@ -47,6 +53,7 @@ h2{
 	padding-left: 170px;
 }
 
+
 .wordBank div{
 	display: flex;
 	border-bottom: 5px solid black;
@@ -56,3 +63,10 @@ h2{
 	padding: 0 20px;
 }
 
+span {
+	top: 640px;
+	left: 500px;
+	position: absolute;
+	/*opacity: 0;*/
+	transition: all 1s ease;
+}

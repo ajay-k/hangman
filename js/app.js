@@ -17,6 +17,7 @@ let turnsLeft = hangmanImageSources.length + 1;
 // remainingTurns.style.color = "red";
 console.log("Remaining turns: ", remainingTurns);
 
+//confirm("Welcome! To play the game simply press the start button. A random word will be generated for you");
 // fetch('https://example.com/profile/avatar', {
 //   method: 'PUT',
 //   body: formData
@@ -31,17 +32,15 @@ console.log("Remaining turns: ", remainingTurns);
 
 //fetch('http://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&minCorpusCount=0&minLength=5&maxLength=15&limit=1&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5')
 
-fetch('https://random-word-api.herokuapp.com/word?key=CBWHTBAJ&number=1/_?key=_&swear=0')
+fetch('https://random-word-api.herokuapp.com/word?key=63COGGKG&number=1/_?key=_&swear=0')
   .then((response) => {
     return response.json();
   })
   .then((data) => {
   	//let randIndex = Math.random(data.length * 10-3 + 3);
     //input = data;
-    console.log("DATA: ", data[0]);
+    console.log("Word: ", data[0]);
     const word = data[0].toUpperCase().split("");
-
-    console.log("INPUT IN FETCH: ", input);
     displayWordBankBlanks(word);
 	displayButtons();
 	turnOffButtons();
@@ -58,8 +57,6 @@ console.log(input);
 //const word = ["C", "D", "R", "D", "S"];
 
 function displayWordBankBlanks(word) {
-	console.log("HELLO WORLD");
-
 	for(let i = 0; i < word.length; i++){
 	let divElement = document.createElement("div");
 	document.getElementsByClassName("wordBank")[0].append(divElement);
@@ -112,15 +109,15 @@ function displayButtons(){
 
 function colorCodeRemainingTurns() {
 	if(hangmanImageSources.length === 5){
-		remainingTurns.style.color = "#FFA500";
+		remainingTurns.style.color = "#32CD32";
 	}else if (hangmanImageSources.length === 4){
-		remainingTurns.style.color = "#FF6347";
+		remainingTurns.style.color = "#FFA500"; 
 	}else if (hangmanImageSources.length === 3){
-		remainingTurns.style.color = "#df5015";
+		remainingTurns.style.color = "#FF6347"; 
 	}else if (hangmanImageSources.length === 2){
-		remainingTurns.style.color = "#FF4500";
+		remainingTurns.style.color = "#df5015"; 
 	}else if(hangmanImageSources.length === 1){
-		remainingTurns.style.color = "#fe001a";
+		remainingTurns.style.color = "#FF4500"; 
 	}else{
 		remainingTurns.style.color = "#fe001a";
 	}
@@ -134,17 +131,37 @@ function displayletters(word) {
 	//var i = 0, length = buttons.length;
 	for (let i=0; i < buttons.length; i++) {
 
+
 	   buttons[i].addEventListener("click", function() {
 	        // use keyword this to target clicked button
 	        //alert(buttons[i].value);
+	        console.log(this);	
 	        if(word.indexOf(buttons[i].value) !== -1){
 
 	        	for(let j = 0; j < word.length; j++){
 	        		if(buttons[i].value === word[j]) {
 	        			let myIndex = j;
 	        			console.log(myIndex);
+	        			//create span
+	        			let spanElem = document.createElement("span");
+	        			//add letter to span
+	        			spanElem.append(word[j]);
+	        			//add span to button
+	        			
+	        			buttons[i].before(spanElem);
+
+	        			let wordBankDivTop = wordBankDivs.children[myIndex].getBoundingClientRect().top;
+	        			let wordBankDivLeft = wordBankDivs.children[myIndex].getBoundingClientRect().left;
+
+	        			spanElem.style.top = `${Math.floor(wordBankDivTop)}px`;
+	        			spanElem.style.left = `${Math.floor(wordBankDivLeft)}px`;
+	        			spanElem.style.opacity = '1';
+
 	        			correctLetterCounter++;
-	        			wordBankDivs.children[myIndex].textContent = word[j];
+	        			setTimeout(function() {
+	        				wordBankDivs.children[myIndex].textContent = word[j];
+	        			}, 1000)
+	        			console.log(wordBankDivs.children[myIndex]);
 	        		}
 	        	}
 
@@ -168,6 +185,7 @@ function displayletters(word) {
 				buttons[i].style.background = "red";
 				buttons[i].style.color = "white";
 			}
+			///buttons[i].style.background = "black";
 			buttons[i].disabled = true
 
     });
@@ -193,7 +211,7 @@ console.log(hanganImageObj);
 
 
 
-
+//let position = wordBankDivs.children[0].getBoundingClientRect();
 
 const btnA = document.querySelector("button");
 
