@@ -146,8 +146,15 @@ function displayletters(word) {
 	        			let spanElem = document.createElement("span");
 	        			//add letter to span
 	        			spanElem.append(word[j]);
-	        			//add span to button
-	        			
+	        			//add span to button]
+	        			let buttonTop = this.getBoundingClientRect().top;
+	        			let butonLeft = this.getBoundingClientRect().left;
+	        			spanElem.style.top = `${Math.floor(buttonTop)}px`;
+	        			spanElem.style.left = `${Math.floor(butonLeft)}px`;
+
+	        			console.log("Button Top: ", buttonTop);
+
+
 	        			buttons[i].before(spanElem);
 
 	        			let wordBankDivTop = wordBankDivs.children[myIndex].getBoundingClientRect().top;
