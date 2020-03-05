@@ -3,6 +3,7 @@ console.log("Linked and working!")
 let input = 'PEOPLE';
 const word = input.toUpperCase().split("");
 
+
 let hangmanImageSources = ["images/drawHead.png", "images/drawBody.png",
  "images/drawLeftLeg.png", "images/drawRightLeg.png", "images/drawLeftArm.png","images/drawRightArm.png"];
 
@@ -31,8 +32,9 @@ console.log("Remaining turns: ", remainingTurns);
 // });
 
 //fetch('http://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&minCorpusCount=0&minLength=5&maxLength=15&limit=1&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5')
-
-fetch('https://random-word-api.herokuapp.com/word?key=63COGGKG&number=1/_?key=_&swear=0')
+//https://random-word-api.herokuapp.com/word?key=6679SYNZ&number=1/_?key=_&swear=0
+//https://random-word-api.herokuapp.com/word?number=1
+fetch('https://random-word-api.herokuapp.com/word?number=1')
   .then((response) => {
     return response.json();
   })
@@ -157,8 +159,11 @@ function displayletters(word) {
 
 	        			buttons[i].before(spanElem);
 
+	        			//24
+	        			//15
 	        			let wordBankDivTop = wordBankDivs.children[myIndex].getBoundingClientRect().top;
-	        			let wordBankDivLeft = wordBankDivs.children[myIndex].getBoundingClientRect().left;
+	        			let wordBankDivLeft = wordBankDivs.children[myIndex].getBoundingClientRect().left+10;
+
 
 	        			spanElem.style.top = `${Math.floor(wordBankDivTop)}px`;
 	        			spanElem.style.left = `${Math.floor(wordBankDivLeft)}px`;
@@ -166,7 +171,9 @@ function displayletters(word) {
 
 	        			correctLetterCounter++;
 	        			setTimeout(function() {
-	        				wordBankDivs.children[myIndex].textContent = word[j];
+	        				 spanElem.style.opacity = 0; 
+	        				 wordBankDivs.children[myIndex].textContent = word[j];
+
 	        			}, 1000)
 	        			console.log(wordBankDivs.children[myIndex]);
 	        		}
