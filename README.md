@@ -35,15 +35,20 @@ Hangman is a game developed using **HTML**, **CSS**, and **Javascript**. It gene
 
 Then, open __index.html__ using Firefox or Google Chrome.
 
+ __Option 2:__
+ 
+[Hangman Github Pages](https://ajay-k.github.io/hangman/)
+
+### Game Setup
 A random word is generated automatically upon page loading, if you want another word refresh the page
 
 Select letters on the keyboard to guess the word
 
-* Vowels are highlighted in orange on the keyboard to make it easier to distingush
+* Vowels are highlighted in **orange** on the keyboard to make it easier to distingush
 
-* If letter is in word, keyboard button is turned green and animation takes effect to move letter onto correct word position a button is disabled.
+* If letter is in word, keyboard button is turned **green** and animation takes effect to move letter onto correct word position a button is disabled.
 
-* If letter is not in word, keyboard button is turned red and button is disabled.
+* If letter is not in word, keyboard button is turned **red** and button is disabled.
 
 
 ## The Approach Taken
