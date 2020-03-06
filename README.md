@@ -1,8 +1,5 @@
 # Hangman
-
-## Welcome to Hangman Game
-
-### Initial State: To start the game, press the start button
+<!--### Initial State: To start the game, press the start button
 ![State-0](https://github.com/ajay-k/hangman/blob/master/images/State0.png)
 
 ### State 1: User is able to input letters and see if they guessed correctly
@@ -15,4 +12,20 @@
 ![State-3](https://github.com/ajay-k/hangman/blob/master/images/State3.png)
 
 ### State 4: If user guesses word correctly, display dialog box and ask if they want to reply
-![State-4](https://github.com/ajay-k/hangman/blob/master/images/State4.png)
+![State-4](https://github.com/ajay-k/hangman/blob/master/images/State4.png)-->
+
+Hangman is a game developed using **HTML**, **CSS**, and **Javascript**. It generates a random word for the user to solve. The user guesses letters to solve the word using the keyboard displayed on screen. This project was made to get a grasp of DOM manipulation along with learning CSS transitions.
+
+*Converts randomly generated word to **uppercase** letters
+
+*Finds the location of the letter and places it in correct position on wordbank
+
+*Handles **repetitive** letters in word
+
+*Correct letter pops up above selected keyboard button and animated to correct placement on wordbank
+
+## Usage
+
+```Download zip from this repository ```
+
+```Open index.html using Firefox or Google Chrome```
