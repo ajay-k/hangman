@@ -24,8 +24,17 @@ Hangman is a game developed using **HTML**, **CSS**, and **Javascript**. It gene
 
 *Correct letter pops up above selected keyboard button and animated to correct placement on wordbank
 
-## Usage
+## How to play
 
 ```Download zip from this repository ```
 
 ```Open index.html using Firefox or Google Chrome```
+
+## Known bugs
+When resizing the browser window the animiation may animate the letter to the wrong location, but the correct letter will appear on the word bank.
+
+## Screenshots
+![GameScreenshot](https://github.com/ajay-k/hangman/blob/master/images/hangmanGame.png)
+
+## Wireframe
+![WireFrame](https://github.com/ajay-k/hangman/blob/master/images/State1.png)
