@@ -5,6 +5,7 @@ let input = 'WELCOME';
 const word = input.toUpperCase().split("");
 
 
+
 let hangmanImageSources = ["images/drawHead.png", "images/drawBody.png",
  "images/drawLeftLeg.png", "images/drawRightLeg.png", "images/drawLeftArm.png","images/drawRightArm.png"];
 
@@ -13,6 +14,7 @@ let wordBankDivs = document.getElementsByClassName("wordBank")[0];
 let remainingTurns = document.getElementById("remainingTurns");
 
 let turnsLeft = hangmanImageSources.length + 1;
+
 
 fetch('https://random-word-api.herokuapp.com/word?number=1')
   .then((response) => {
