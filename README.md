@@ -57,3 +57,6 @@ Intially the word was choosen by me, to make it more difficult and dynamic I cho
 
 ## Known Bugs / Unsolved Problems
 When resizing the browser window the animiation may animate the letter to the wrong location, but the correct letter will appear on the word bank.
+
+## Sources
+[Random Word API](https://github.com/RazorSh4rk/random-word-api)
