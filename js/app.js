@@ -140,7 +140,7 @@ function displayletters(word) {
 			}else if(hangmanImageSources.length <= 0){
 				turnsLeft--;
 				colorCodeRemainingTurns();
-				alert("YOU LOSE!");
+				alert(`          YOU LOSE! \nThe word was: ${word.join("")}`);
 				turnOffButtons();
 	        }
 			else {
