@@ -22,7 +22,7 @@ Hangman is a game developed using **HTML**, **CSS**, and **Javascript**. It gene
 
 * Handles **repetitive** letters in a word
 
-*Correct letter pops up above selected keyboard button and animated to correct placement on wordbank
+* Correct letter will pop up above selected keyboard button and animated to correct placement on wordbank
 
 ## How to play
 
